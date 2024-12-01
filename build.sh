@@ -5,4 +5,4 @@ cd calamares_local_repo/
 cd ..
 
 sudo rm -rf /tmp/archiso-calamares
-sudo mkarchiso -v -w /tmp/archiso-calamares ./archiso
+sudo mkarchiso -v -w /tmp/archiso-calamares ./archiso -o ./out
