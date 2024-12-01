@@ -1,0 +1,698 @@
+- name: "Common packages"
+  description: "Recommended. Don't change unless you know what you're doing (generic)."
+  hidden: false
+  selected: false
+  critical: true
+  subgroups:
+    - name: "Network"
+      description: "Network apps drivers and tools"
+      selected: false
+      packages:
+        subgroups:
+          - name: "Firewall"
+            description: "Firewall support"
+            selected: false
+            packages:
+              - firewalld
+              - iptables
+              - iptables-nft
+
+          - name: "Network Managers"
+            description: "Network managers"
+            selected: false
+            packages:
+              - connman
+              - dhclient
+              - dhcpcd
+              - dialog
+              - iwd
+              - modemmanager
+              - netctl
+              - networkmanager
+              - wireless-regdb
+              - wireless_tools
+              - wpa_supplicant
+
+          - name: "NetworkManager Plugins"
+            description: ""
+            selected: false
+            packages:
+              - networkmanager-l2tp
+              - networkmanager-openconnect
+              - networkmanager-openvpn
+              - networkmanager-pptp
+              - network-manager-sstp
+              - networkmanager-strongswan
+              - networkmanager-vpnc
+
+          - name: "VPN Software"
+            description: "Virtual Private Network apps and tools"
+            selected: false
+            packages:
+              - openconnect
+              - openvpn
+              - vpnc
+              - wireguard-tools
+
+          - name: "Other Software"
+            selected: false
+            packages:
+              - dnsmasq
+              - dnsutils
+              - ethtool
+              - nbd
+              - ndisc6
+              - nss-mdns
+              - ppp
+              - pptpclient
+              - rp-pppoe
+              - usb_modeswitch
+
+    - name: "Packages Management"
+      description: "Packages tools"
+      selected: false
+      packages:
+        - pkgfile
+        - rebuild-detector
+        - reflector
+
+- name: "Drivers and Firmware"
+  description: "Recommended. Don't change unless you know what you're doing (generic)."
+  hidden: false
+  selected: false
+  critical: true
+  subgroups:
+    - name: "Audio"
+      description: "Audio handling tools apps and libs"
+      selected: false
+      packages:
+        - alsa-firmware
+        - alsa-plugins
+        - alsa-utils
+        - pavucontrol
+        - pipewire-pulse
+        - wireplumber
+        - pipewire-alsa
+        - pipewire-jack
+        - rtkit
+
+    - name: "GPU"
+      description: "Graphic cards hardware drivers"
+      selected: false
+      packages:
+        - xf86-video-amdgpu
+        - xf86-video-ati
+        - xf86-video-intel
+      subgroups:
+        - name: "Nvidia Drivers"
+          description: "Drivers for Nvidia graphic cards"
+          selected: false
+          packages:
+            - nvidia
+            - nvidia-lts
+            - nvidia-dkms
+            - nvida-open
+            - nvidia-open-dkms
+
+    - name: "Filesystem"
+      description: "Filesystem tools and drivers"
+      selected: false
+      packages:
+        - bcachefs-tools
+        - btrfs-progs
+        - exfatprogs
+        - f2fs-tools
+        - e2fsprogs
+        - jfsutils
+        - nilfs-utils
+        - ntfs-3g
+        - reiserfsprogs
+        - sshfs
+        - udftools
+        - xfsprogs
+        
+    - name: "NIC Drivers"
+      description: "Driver and firmware for specific NICs"
+      selected: false
+      packages:
+        - b43-fwcutter
+        - broadcom-wl-dkms
+        
+    - name: "Virtualization"
+      description: "Software necessary for virtualized machines"
+      selected: false
+      packages:
+        - hyperv
+        - open-vm-tools
+        - qemu-guest-agent
+        - virtualbox-guest-utils-nox
+
+    - name: "Miscellanea"
+      description: "Hardware support libs and firmware"
+      selected: false
+      packages:
+        - dmidecode
+        - dmraid
+        - hdparm
+        - hwdetect
+        - lsscsi
+        - mtools
+        - sg3_utils
+        - sof-firmware
+
+      - name: "Power"
+        description: "Powermanagement support"
+        selected: false
+        packages:
+          - power-profiles-daemon
+          - upower
+
+- name: "XFCE4-Desktop"
+  description: "XFCE4 - lightweight desktop fast and low on system resources, visually appealing and user friendly."
+  hidden: false
+  selected: false
+  expanded: false
+  critical: true
+  subgroups:
+    - name: "XFCE4-Desktop"
+      description: "XFCE4 needed packages"
+      selected: false
+      packages:
+       - blueman
+       - file-roller
+       - galculator
+       - gvfs
+       - gvfs-afc
+       - gvfs-gphoto2
+       - gvfs-mtp
+       - gvfs-nfs
+       - gvfs-smb
+       - lightdm
+       - lightdm-slick-greeter
+       - network-manager-applet
+       - parole
+       - ristretto
+       - thunar-archive-plugin
+       - thunar-media-tags-plugin
+       - xdg-user-dirs-gtk
+       - xed
+       - xfce4
+       - xfce4-battery-plugin
+       - xfce4-datetime-plugin
+       - xfce4-mount-plugin
+       - xfce4-netload-plugin
+       - xfce4-notifyd
+       - xfce4-pulseaudio-plugin
+       - xfce4-screensaver
+       - xfce4-screenshooter
+       - xfce4-taskmanager
+       - xfce4-wavelan-plugin
+       - xfce4-weather-plugin
+       - xfce4-whiskermenu-plugin
+       - xfce4-xkb-plugin
+
+- name: "i3-Window-Manager"
+  description: "i3 tiling window manager, primarily targeted at developers and advanced users."
+  hidden: false
+  selected: false
+  expanded: false
+  critical: true
+  packages:
+    - acpi
+    - arandr
+    - archlinux-xdg-menu
+    - awesome-terminal-fonts
+    - dex
+    - dmenu
+    - dunst
+    - file-roller
+    - galculator
+    - gthumb
+    - gtk-engine-murrine
+    - gvfs
+    - gvfs-afc
+    - gvfs-gphoto2
+    - gvfs-mtp
+    - gvfs-nfs
+    - gvfs-smb
+    - i3-gaps
+    - i3blocks
+    - i3lock
+    - i3status
+    - jq
+    - lightdm
+    - lightdm-slick-greeter
+    - lxappearance-gtk3
+    - mpv
+    - network-manager-applet
+    - nitrogen
+    - numlockx
+    - picom
+    - playerctl
+    - polkit-gnome
+    - rofi
+    - scrot
+    - sysstat
+    - thunar
+    - thunar-archive-plugin
+    - thunar-volman
+    - tumbler
+    - xbindkeys
+    - xdg-user-dirs-gtk
+    - xed
+    - xfce4-terminal
+    - xorg-xbacklight
+    - xorg-xdpyinfo
+
+- name: "KDE-Desktop"
+  description: "KDE-Plasma Desktop - Simple by default, powerful when needed."
+  hidden: false
+  selected: false
+  critical: true
+  packages:
+    - bluedevil
+    - breeze
+    - breeze-gtk
+    - breeze-plymouth
+    - discover
+    - drkonqi
+    - flatpak-kcm
+    - kactivitymanagerd
+    - kde-cli-tools
+    - kde-gtk-config
+    - kdecoration
+    - kdeplasma-addons
+    - kgamma
+    - kglobalacceld
+    - kinfocenter
+    - kmenuedit
+    - kpipewire
+    - krdp
+    - kscreen
+    - kscreenlocker
+    - ksshaskpass
+    - ksystemstats
+    - kwallet-pam
+    - kwayland
+    - kwin
+    - kwrited
+    - layer-shell-qt
+    - libkscreen
+    - libksysguard
+    - libplasma
+    - milou
+    - ocean-sound-theme
+    - oxygen
+    - oxygen-sounds
+    - plasma-activities
+    - plasma-activities-stats
+    - plasma-browser-integration
+    - plasma-desktop
+    - plasma-disks
+    - plasma-firewall
+    - plasma-integration
+    - plasma-nm
+    - plasma-pa
+    - plasma-sdk
+    - plasma-systemmonitor
+    - plasma-thunderbolt
+    - plasma-vault
+    - plasma-welcome
+    - plasma-workspace
+    - plasma-workspace-wallpapers
+    - plasma5support
+    - plymouth-kcm
+    - polkit-kde-agent
+    - powerdevil
+    - print-manager
+    - qqc2-breeze-style
+    - sddm-kcm
+    - systemsettings
+    - wacomtablet
+    - xdg-desktop-portal-kde
+
+  subgroup:
+    - name: "KDE-Desktop applications"
+      description: "KDE-Plasma Desktop applications"
+      hidden: false
+      selected: false
+      critical: true
+      packages:
+        - accessibility-inspector
+        - akonadi-calendar-tools
+        - akonadi-import-wizard
+        - akonadiconsole
+        - akregator
+        - alligator
+        - angelfish
+        - arianna
+        - ark
+        - artikulate
+        - audex
+        - audiocd-kio
+        - audiotube
+        - blinken
+        - bomber
+        - bovo
+        - cantor
+        - cervisia
+        - colord-kde
+        - dolphin
+        - dolphin-plugins
+        - dragon
+        - elisa
+        - falkon
+        - ffmpegthumbs
+        - filelight
+        - francis
+        - ghostwriter
+        - granatier
+        - grantlee-editor
+        - gwenview
+        - isoimagewriter
+        - itinerary
+        - juk
+        - k3b
+        - kaddressbook
+        - kajongg
+        - kalarm
+        - kalgebra
+        - kalk
+        - kalm
+        - kalzium
+        - kamera
+        - kamoso
+        - kanagram
+        - kapman
+        - kapptemplate
+        - kasts
+        - kate
+        - katomic
+        - kbackup
+        - kblackbox
+        - kblocks
+        - kbounce
+        - kbreakout
+        - kbruch
+        - kcachegrind
+        - kcalc
+        - kcharselect
+        - kclock
+        - kcolorchooser
+        - kcron
+        - kde-dev-scripts
+        - kde-dev-utils
+        - kde-inotify-survey
+        - kdebugsettings
+        - kdeconnect
+        - kdegraphics-thumbnailers
+        - kdenetwork-filesharing
+        - kdenlive
+        - kdepim-addons
+        - kdesdk-kio
+        - kdesdk-thumbnailers
+        - kdevelop
+        - kdevelop-php
+        - kdevelop-python
+        - kdf
+        - kdialog
+        - kdiamond
+        - keditbookmarks
+        - keysmith
+        - kfind
+        - kfourinline
+        - kgeography
+        - kget
+        - kgoldrunner
+        - kgpg
+        - kgraphviewer
+        - khangman
+        - khelpcenter
+        - kig
+        - kigo
+        - killbots
+        - kimagemapeditor
+        - kio-admin
+        - kio-extras
+        - kio-gdrive
+        - kio-zeroconf
+        - kirigami-gallery
+        - kiriki
+        - kiten
+        - kjournald
+        - kjumpingcube
+        - kleopatra
+        - klettres
+        - klickety
+        - klines
+        - kmag
+        - kmahjongg
+        - kmail
+        - kmail-account-wizard
+        - kmines
+        - kmix
+        - kmousetool
+        - kmouth
+        - kmplot
+        - knavalbattle
+        - knetwalk
+        - knights
+        - koko
+        - kolf
+        - kollision
+        - kolourpaint
+        - kompare
+        - kongress
+        - konqueror
+        - konquest
+        - konsole
+        - kontact
+        - kontrast
+        - konversation
+        - korganizer
+        - kpat
+        - krdc
+        - krecorder
+        - kreversi
+        - krfb
+        - kruler
+        - kshisen
+        - ksirk
+        - ksnakeduel
+        - kspaceduel
+        - ksquares
+        - ksudoku
+        - ksystemlog
+        - kteatime
+        - ktimer
+        - ktorrent
+        - ktouch
+        - ktrip
+        - ktuberling
+        - kturtle
+        - kubrick
+        - kwalletmanager
+        - kwave
+        - kweather
+        - kwordquiz
+        - lokalize
+        - lskat
+        - marble
+        - markdownpart
+        - massif-visualizer
+        - mbox-importer
+        - merkuro
+        - minuet
+        - neochat
+        - okular
+        - palapeli
+        - parley
+        - partitionmanager
+        - picmi
+        - pim-data-exporter
+        - pim-sieve-editor
+        - plasmatube
+        - poxml
+        - rocs
+        - signon-kwallet-extension
+        - skanlite
+        - skanpage
+        - skladnik
+        - spectacle
+        - step
+        - svgpart
+        - sweeper
+        - telly-skout
+        - tokodon
+        - umbrello
+        - yakuake
+        - zanshin
+
+- name: "GNOME-Desktop"
+  description: "GNOME Desktop - designed to put you in control and get things done."
+  hidden: false
+  selected: false
+  critical: true
+  packages:
+    - adwaita-icon-theme
+    - eog
+    - evince
+    - file-roller
+    - gdm
+    - gedit
+    - gnome-calculator
+    - gnome-control-center
+    - gnome-disk-utility
+    - gnome-keyring
+    - gnome-nettool
+    - gnome-power-manager
+    - gnome-screenshot
+    - gnome-shell
+    - gnome-terminal
+    - gnome-themes-extra
+    - gnome-tweaks
+    - gnome-usage
+    - gvfs
+    - gvfs-afc
+    - gvfs-gphoto2
+    - gvfs-mtp
+    - gvfs-nfs
+    - gvfs-smb
+    - nautilus
+    - nautilus-sendto
+    - sushi
+    - totem
+    - xdg-user-dirs-gtk
+
+- name: "MATE-Desktop"
+  description: "MATE Desktop - the continuation of GNOME 2"
+  hidden: false
+  selected: false
+  critical: true
+  packages:
+    - celluloid
+    - gvfs
+    - gvfs-afc
+    - gvfs-gphoto2
+    - gvfs-mtp
+    - gvfs-nfs
+    - gvfs-smb
+    - lightdm
+    - lightdm-slick-greeter
+    - mate
+    - mate-extra
+    - network-manager-applet
+    - xdg-user-dirs-gtk
+
+- name: "Cinnamon-Desktop"
+  description: "Cinnamon Desktop - advanced innovative features and a traditional user experience."
+  hidden: false
+  selected: false
+  critical: true
+  packages:
+    - celluloid
+    - cinnamon
+    - cinnamon-translations
+    - file-roller
+    - gnome-calculator
+    - gnome-screenshot
+    - gnome-system-monitor
+    - gnome-terminal
+    - gthumb
+    - gvfs
+    - gvfs-afc
+    - gvfs-gphoto2
+    - gvfs-mtp
+    - gvfs-nfs
+    - gvfs-smb
+    - lightdm
+    - lightdm-slick-greeter
+    - nemo-fileroller
+    - nemo-image-converter
+    - nemo-preview
+    - nemo-share
+    - x-apps
+    - xdg-user-dirs-gtk
+
+- name: "Budgie-Desktop"
+  description: "Budgie - an independent, familiar, and modern desktop."
+  hidden: false
+  selected: false
+  critical: true
+  packages:
+    - budgie-control-center
+    - budgie-desktop
+    - budgie-desktop-view
+    - budgie-extras
+    - budgie-screensaver
+    - eog
+    - evince
+    - file-roller
+    - gedit
+    - gnome-keyring
+    - gnome-screenshot
+    - gnome-terminal
+    - gvfs
+    - gvfs-afc
+    - gvfs-gphoto2
+    - gvfs-mtp
+    - gvfs-nfs
+    - gvfs-smb
+    - lightdm
+    - lightdm-slick-greeter
+    - nautilus
+    - nautilus-sendto
+    - network-manager-applet
+    - sushi
+    - totem
+    - xdg-user-dirs-gtk
+
+- name: "LXQT-Desktop"
+  description: "The Lightweight Qt Desktop Environment."
+  hidden: false
+  selected: false
+  critical: true
+  packages:
+    - audiocd-kio
+    - baka-mplayer
+    - breeze
+    - breeze-gtk
+    - featherpad
+    - gvfs
+    - gvfs-mtp
+    - kio-fuse
+    - libstatgrab
+    - libsysstat
+    - lm_sensors
+    - lxqt
+    - lxqt-archiver
+    - network-manager-applet
+    - oxygen-icons
+    - pavucontrol-qt
+    - print-manager
+    - qt5-translations
+    - xdg-utils
+    - xscreensaver
+    - xsettingsd
+
+- name: "Printing-Support"
+  description: "Support for printing (Cups)"
+  hidden: false
+  selected: false
+  critical: true
+  packages:
+    - cups
+    - cups-filters
+    - cups-pdf
+    - foomatic-db
+    - foomatic-db-engine
+    - foomatic-db-gutenprint-ppds
+    - foomatic-db-nonfree
+    - foomatic-db-nonfree-ppds
+    - foomatic-db-ppds
+    - ghostscript
+    - gsfonts
+    - gutenprint
+    - splix
+    - system-config-printer
+
