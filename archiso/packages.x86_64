@@ -143,3 +143,6 @@ kpmcore
 libpwquality
 mkinitcpio-openswap
 yaml-cpp
+
+#QOL
+mkinitcpio-firmware
